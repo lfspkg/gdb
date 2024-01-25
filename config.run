@@ -1,9 +1,11 @@
 #!/bin/bash
 set --
 set -- "$@"
-set -- "$@" --prefix=$HOME/stow/gdb
+#set -- "$@" --prefix=$HOME/stow/gdb
+set -- "$@" --prefix=/tools
 set -- "$@" --disable-silent-rules
 set -- "$@" --without-intl
+set -- "$@" --enable-static
 
 
 ./configure "$@"
