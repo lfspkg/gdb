@@ -1,18 +1,23 @@
 #!/bin/bash
-set --
-set -- "$@"
-set -- "$@" --prefix=/tools
-set -- "$@" --disable-silent-rules
-set -- "$@" --without-intl
-set -- "$@" --without-nls
-set -- "$@" --enable-static
-set -- "$@" --prefix=$LFS/tools 
-set -- "$@" --with-sysroot=$LFS 
-set -- "$@" --target=$LFS_TGT   
-set -- "$@" --disable-nls       
-set -- "$@" --enable-gprofng=no 
-set -- "$@" --disable-werror    
-set -- "$@" --enable-default-hash-style=gnu
+set --           --target=$LFS_TGT         
+set -- "$@"      --prefix=/tools       
+set -- "$@"      --with-glibc-version=2.38 
+set -- "$@"      --with-sysroot=$LFS       
+set -- "$@"      --with-newlib             
+set -- "$@"      --without-headers         
+set -- "$@"      --enable-default-pie      
+set -- "$@"      --enable-default-ssp      
+set -- "$@"      --disable-nls             
+set -- "$@"      --disable-shared          
+set -- "$@"      --disable-multilib        
+set -- "$@"      --disable-threads         
+set -- "$@"      --disable-libatomic       
+set -- "$@"      --disable-libgomp         
+set -- "$@"      --disable-libquadmath     
+set -- "$@"      --disable-libssp          
+set -- "$@"      --disable-libvtv          
+set -- "$@"      --disable-libstdcxx       
+set -- "$@"      --enable-languages=c,c++
 
 
 ../gdb/configure "$@"
